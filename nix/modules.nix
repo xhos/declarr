@@ -15,8 +15,10 @@
   in {
     options.services.${name}.apiKeyFile = mkOption {
       type = lib.types.str;
+      default = "";
+      description = "Path to a file containing the API key for ${name}.";
     };
-    config.systemd.services.${name}.serviceConfig.ExecStart = mkIf cfg.enable (
+    config.systemd.services.${name}.serviceConfig.ExecStart = mkIf (cfg.enable && cfg.apiKeyFile != "") (
       lib.mkForce
       (pkgs.writeShellScript
         "init-${name}" ''
