@@ -154,6 +154,14 @@ class FormatCompiler:
                 "profilarr.importer.compiler.load_regex_patterns",
                 new=load_regex_patterns,
             ),
+            patch(
+                "profilarr.importer.strategies.format.load_regex_patterns",
+                new=load_regex_patterns,
+            ),
+            patch(
+                "profilarr.importer.strategies.profile.load_regex_patterns",
+                new=load_regex_patterns,
+            ),
         ):
             server_cfg = {
                 "type": cfg["declarr"]["type"],
