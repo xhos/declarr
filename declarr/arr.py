@@ -133,7 +133,9 @@ class FormatCompiler:
                     # Silent fail for individual pattern files
                     pass
 
-            # pp(patterns)
+            for name, pattern in (cfg.get("regexPatterns") or {}).items():
+                patterns[name] = pattern
+
             return patterns
 
         with (
