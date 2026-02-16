@@ -80,10 +80,10 @@ class FormatCompiler:
             name = ""
             if file_path.startswith("profile/"):
                 file_type = "profile"
-                name = file_path.removeprefix("profile/")
+                name = file_path.removeprefix("profile/").removesuffix(".yml")
             elif file_path.startswith("custom_format/"):
                 file_type = "format"
-                name = file_path.removeprefix("custom_format/")
+                name = file_path.removeprefix("custom_format/").removesuffix(".yml")
             else:
                 log.error("unexpected path")
                 raise Exception("unexpected path")
@@ -109,7 +109,7 @@ class FormatCompiler:
                         "profile": "profiles",
                         "format": "custom_formats",
                     }[file_type]
-                    / Path(name)
+                    / Path(name + ".yml")
                 )
             except FileNotFoundError:
                 pass
