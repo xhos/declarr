@@ -155,11 +155,7 @@ class FormatCompiler:
                 new=load_regex_patterns,
             ),
             patch(
-                "profilarr.importer.strategies.format.load_regex_patterns",
-                new=load_regex_patterns,
-            ),
-            patch(
-                "profilarr.importer.strategies.profile.load_regex_patterns",
+                "profilarr.importer.utils.load_regex_patterns",
                 new=load_regex_patterns,
             ),
         ):
