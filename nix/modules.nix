@@ -31,7 +31,7 @@
   };
 in {
   imports = [
-    ./jellyseerr.nix
+    ./seerr.nix
     (mkArrSerivice "sonarr")
     (mkArrSerivice "radarr")
     (mkArrSerivice "lidarr")

@@ -10,8 +10,8 @@
     src = fetchFromGitHub {
       owner = "Dictionarry-Hub";
       repo = "profilarr";
-      rev = "main";
-      hash = "sha256-7aiLj87huvSYAuIxcMhudWDAGV3F9QhH1VbLEvB8UyQ=";
+      rev = "v${version}";
+      hash = "sha256-aYYfMJSN76h625j/pda0G93de+c21wGIxYaeylVfq98=";
     };
 
     unpackPhase = ''
@@ -47,7 +47,7 @@
         regex
       ]
       ++ (with pkgs; [
-        pkgs.jellyseerr
+        pkgs.seerr
       ]);
 
     pythonImportsCheck = [
